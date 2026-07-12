@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom";
 
-function ProductCard({ product }) {
+function ProductCard({ product, addToCart }) {
   return (
-    <Link to={`/product/${product.id}`}>
-      <div className="bg-white rounded-xl shadow hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+    <div className="bg-white rounded-xl shadow hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
 
-        {/* Discount Badge */}
+      <Link to={`/product/${product.id}`}>
+
         <div className="relative">
 
           <span className="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
             20% OFF
           </span>
 
-          <button className="absolute top-3 right-3 bg-white rounded-full w-9 h-9 shadow flex items-center justify-center hover:bg-red-100 transition">
+          <button
+            className="absolute top-3 right-3 bg-white rounded-full w-9 h-9 shadow flex items-center justify-center hover:bg-red-100 transition"
+            onClick={(e) => e.preventDefault()}
+          >
             ❤️
           </button>
 
@@ -50,14 +53,20 @@ function ProductCard({ product }) {
 
           </div>
 
-          <button className="w-full mt-5 bg-green-600 text-white py-2.5 rounded-lg hover:bg-green-700 transition duration-300">
-            🛒 Add to Cart
-          </button>
-
         </div>
 
+      </Link>
+
+      <div className="px-4 pb-4">
+        <button
+          onClick={() => addToCart(product)}
+          className="w-full bg-green-600 text-white py-2.5 rounded-lg hover:bg-green-700 transition duration-300"
+        >
+          🛒 Add to Cart
+        </button>
       </div>
-    </Link>
+
+    </div>
   );
 }
 
