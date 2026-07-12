@@ -1,15 +1,15 @@
 function ProductCard({ product }) {
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+    <div className="bg-white rounded-xl shadow hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
 
       {/* Discount Badge */}
       <div className="relative">
 
-        <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded">
+        <span className="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
           20% OFF
         </span>
 
-        <button className="absolute top-3 right-3 bg-white rounded-full w-8 h-8 shadow flex items-center justify-center hover:bg-red-100">
+        <button className="absolute top-3 right-3 bg-white rounded-full w-9 h-9 shadow flex items-center justify-center hover:bg-red-100 transition">
           ❤️
         </button>
 
@@ -23,21 +23,21 @@ function ProductCard({ product }) {
 
       <div className="p-4">
 
-        <p className="text-yellow-500 font-medium">
-          ⭐ 4.8 (120)
+        <p className="text-yellow-500 text-sm">
+          ⭐⭐⭐⭐⭐ <span className="text-gray-500">(120 Reviews)</span>
         </p>
 
         <h2 className="text-lg font-bold mt-2">
           {product.name}
         </h2>
 
-        <p className="text-gray-500 text-sm">
+        <p className="text-gray-500 text-sm mt-1">
           Fresh & Organic
         </p>
 
-        <div className="flex items-center gap-2 mt-3">
+        <div className="flex items-center gap-3 mt-4">
 
-          <span className="text-xl font-bold text-green-600">
+          <span className="text-2xl font-bold text-green-600">
             ₹{product.price}
           </span>
 
@@ -47,8 +47,8 @@ function ProductCard({ product }) {
 
         </div>
 
-        <button className="w-full mt-5 bg-green-600 hover:bg-green-700 text-white py-2 rounded-xl font-semibold transition">
-          Add to Cart
+        <button className="w-full mt-5 bg-green-600 text-white py-2.5 rounded-lg hover:bg-green-700 transition duration-300">
+          🛒 Add to Cart
         </button>
 
       </div>

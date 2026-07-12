@@ -2,24 +2,28 @@ import categories from "../data/categories";
 
 function Categories() {
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-5">
 
-        <h2 className="text-3xl font-bold mb-8">
+        <h2 className="text-3xl font-bold mb-2">
           Shop by Category
         </h2>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <p className="text-gray-500 mb-8">
+          Browse everything you need in one place.
+        </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 
           {categories.map((item) => (
             <div
               key={item.id}
-              className="rounded-xl overflow-hidden shadow hover:shadow-xl transition cursor-pointer bg-white"
+              className="bg-white rounded-xl shadow hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden cursor-pointer"
             >
               <img
                 src={item.image}
                 alt={item.name}
-                className="h-48 w-full object-cover"
+                className="w-full h-52 object-cover"
               />
 
               <div className="p-4 text-center font-semibold">
