@@ -1,22 +1,13 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Categories from "./components/Categories";
-import ProductGrid from "./components/ProductGrid";
-import Features from "./components/Features";
-import Newsletter from "./components/Newsletter";
-import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <Categories />
-      <ProductGrid />
-      <Features />
-      <Newsletter />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/product/:id" element={<ProductDetails />} />
+    </Routes>
   );
 }
 
