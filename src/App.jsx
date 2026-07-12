@@ -1,18 +1,24 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Categories from "./components/Categories";
-import Footer from "./components/Footer";
-import ProductGrid from "./components/ProductGrid";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ProductDetails from "./pages/ProductDetails";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <Categories />
-      < Footer/>
-      <ProductGrid/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

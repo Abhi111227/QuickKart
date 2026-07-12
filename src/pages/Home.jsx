@@ -1,20 +1,20 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import ProductGrid from "../components/ProductGrid";
 import Categories from "../components/Categories";
-import Products from "../components/Products";
+import Features from "../components/Features";
 import Footer from "../components/Footer";
-import Features from "./components/Features";
 
 function Home() {
   return (
-   <>
-  <Navbar />
-  <Hero />
-  <Categories />
-  <Products />
-  <Footer />
-  <Features/>
-</>
+    <>
+      <Navbar />
+      <Hero />
+      <ProductGrid />
+      <Categories />
+      <Features />
+      <Footer />
+    </>
   );
 }
 
