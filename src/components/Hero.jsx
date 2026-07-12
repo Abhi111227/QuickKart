@@ -1,35 +1,39 @@
-import heroImage from "../assets/hero.png";
-
 function Hero() {
   return (
-    <section className="bg-gradient-to-r from-green-500 to-green-700 text-white">
-      <div className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between">
+    <section className="bg-gradient-to-r from-green-100 to-green-50">
+      <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
 
-        {/* Left */}
-        <div className="max-w-xl">
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+        {/* Left Content */}
+        <div className="flex-1">
+          <h1 className="text-5xl font-bold text-gray-800 leading-tight">
             Fresh Groceries
             <br />
-            Delivered in
-            <span className="text-yellow-300"> 10 Minutes</span>
+            Delivered to
+            <span className="text-green-600"> Your Door</span>
           </h1>
 
-          <p className="mt-6 text-lg text-green-100">
-            Order fruits, vegetables, snacks, beverages and daily essentials
+          <p className="text-gray-600 mt-6 text-lg">
+            Shop fresh fruits, vegetables, dairy products and daily essentials
             at the best prices.
           </p>
 
-          <button className="mt-8 bg-yellow-400 text-black px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 hover:scale-105 transition-all duration-300">
-            Shop Now →
-          </button>
+          <div className="mt-8 flex gap-4">
+            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition">
+              Shop Now
+            </button>
+
+            <button className="border border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-3 rounded-lg transition">
+              Explore
+            </button>
+          </div>
         </div>
 
-        {/* Right */}
-        <div className="mt-12 md:mt-0 flex justify-center">
+        {/* Right Image */}
+        <div className="flex-1">
           <img
-            src={heroImage}
+            src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800"
             alt="Fresh Grocery"
-            className="w-[350px] md:w-[450px] object-contain"
+            className="rounded-2xl shadow-xl"
           />
         </div>
 

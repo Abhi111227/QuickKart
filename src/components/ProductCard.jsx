@@ -1,29 +1,23 @@
 function ProductCard({ product }) {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-5 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+    <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-xl transition">
+      <img
+        src={product.image}
+        alt={product.name}
+        className="w-full h-48 object-cover rounded-lg"
+      />
 
-      <div className="text-7xl text-center">
-        {product.image}
-      </div>
-
-      <h2 className="text-xl font-bold mt-4">
+      <h3 className="text-lg font-semibold mt-4">
         {product.name}
-      </h2>
+      </h3>
 
-      <p className="text-gray-500">
-        {product.category}
+      <p className="text-green-600 font-bold mt-2">
+        ₹{product.price}
       </p>
 
-      <div className="flex justify-between items-center mt-4">
-        <span className="text-green-600 font-bold text-xl">
-          ₹{product.price}
-        </span>
-
-        <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
-          Add
-        </button>
-      </div>
-
+      <button className="w-full mt-4 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Add to Cart
+      </button>
     </div>
   );
 }
