@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Categories from "../components/Categories";
 import Products from "../components/Products";
 import Footer from "../components/Footer";
+import Features from "./components/Features";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
   <Categories />
   <Products />
   <Footer />
+  <Features/>
 </>
   );
 }
