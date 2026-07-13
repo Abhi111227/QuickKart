@@ -1,32 +1,28 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProductGrid from "./components/ProductGrid";
+import Cart from "./pages/Cart";
 
-function App() {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (product) => {
-    const existing = cart.find((item) => item.id === product.id);
-
-    if (existing) {
-      setCart(
-        cart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
-    }
-  };
-
+function Home() {
   return (
     <>
-      <Navbar cartCount={cart.length} />
       <Hero />
-      <ProductGrid addToCart={addToCart} />
+      <ProductGrid />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </>
   );
 }

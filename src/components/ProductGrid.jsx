@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../context/CartContext";
 import products from "../data/products";
 import ProductCard from "./ProductCard";
 
-function ProductGrid({ addToCart }) {
+function ProductGrid() {
+  const { addToCart } = useContext(CartContext);
+
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
 
