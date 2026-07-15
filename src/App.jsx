@@ -3,9 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProductGrid from "./components/ProductGrid";
+
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
+import Wishlist from "./pages/Wishlist";
 
 function Home() {
   return (
@@ -25,8 +27,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/order-success" element={<OrderSuccess />}
-/>
+        <Route
+          path="/order-success"
+          element={<OrderSuccess />}
+        />
+        <Route
+          path="/wishlist"
+          element={<Wishlist />}
+        />
       </Routes>
     </>
   );

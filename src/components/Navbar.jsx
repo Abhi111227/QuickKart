@@ -8,19 +8,22 @@ import {
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import { WishlistContext } from "../context/WishlistContext";
 
 function Navbar() {
   const { cartItems } = useContext(CartContext);
+  const { wishlistItems } = useContext(WishlistContext);
 
   const cartCount = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
   );
 
+  const wishlistCount = wishlistItems.length;
+
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-
         {/* Logo */}
         <Link to="/">
           <h1 className="text-3xl font-bold text-green-600">
@@ -45,9 +48,19 @@ function Navbar() {
         {/* Right */}
         <div className="flex items-center gap-6">
 
-          <button className="text-2xl hover:text-red-500 transition">
+          {/* Wishlist */}
+          <Link
+            to="/wishlist"
+            className="relative text-2xl hover:text-red-500 transition"
+          >
             <FaHeart />
-          </button>
+
+            {wishlistCount > 0 && (
+              <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {wishlistCount}
+              </span>
+            )}
+          </Link>
 
           {/* Cart */}
           <Link
